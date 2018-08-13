@@ -82,6 +82,8 @@ public class ControllerPlayingActivity extends AppCompatActivity implements Seek
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
 
+    float location = 0, vol = 0;
+
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,6 +137,7 @@ public class ControllerPlayingActivity extends AppCompatActivity implements Seek
         spinner.setVisibility(View.GONE);
         spinner.setMaxVol(100);
 
+
         croller = (Croller) findViewById(R.id.croller);
         croller.setIndicatorWidth(10);
         croller.setIsContinuous(false);
@@ -174,8 +177,13 @@ public class ControllerPlayingActivity extends AppCompatActivity implements Seek
             public void onProgressChanged(Croller croller, int progress) {
                 // use the progress
                 //from new server
-                volume.setVolume((float)progress/(float)100);
-                volume.saveInBackground();
+                float crollerVol = (float)progress/(float)100;
+
+                if(Math.abs(vol - crollerVol) >= 0.1) {
+                    vol = crollerVol;
+                    volume.setVolume(vol);
+                    volume.saveInBackground();
+                }
 
                 //from old server
 //                song.setVolume(progress);
@@ -340,6 +348,7 @@ public class ControllerPlayingActivity extends AppCompatActivity implements Seek
                     throwing.saveInBackground();
                     spinner.setVisibility(View.VISIBLE);
                     croller.setVisibility(View.GONE);
+                    //TODO - create setVolume method
                     btnThrowSound.setText("Surround Mode");
                 }
                 else {
@@ -347,6 +356,7 @@ public class ControllerPlayingActivity extends AppCompatActivity implements Seek
                     throwing.saveInBackground();
                     spinner.setVisibility(View.GONE);
                     croller.setVisibility(View.VISIBLE);
+                    croller.setProgress((int) (vol*100));
                     btnThrowSound.setText("Throw Sound");
                 }
 
@@ -374,11 +384,17 @@ public class ControllerPlayingActivity extends AppCompatActivity implements Seek
             @Override
             public void onLocationChanged(float vol, float location) {
                 Log.d("LOCATIONCHANGE", "newvol = " + vol + ", location  = " + location);
-                throwing.setLocation(location);
-                throwing.saveInBackground();
+                if(Math.abs(getLoc() - location) >= 0.1) {
+                    setLoc(location);
+                    throwing.setLocation(location);
+                    throwing.saveInBackground();
+                }
 
-                volume.setVolume(vol);
-                volume.saveInBackground();
+                if(Math.abs(getVol() - vol) >= 0.1) {
+                    setVol(vol);
+                    volume.setVolume(vol);
+                    volume.saveInBackground();
+                }
 
                 //old server
 //                song.setMovingNode(location);
@@ -402,7 +418,37 @@ public class ControllerPlayingActivity extends AppCompatActivity implements Seek
 //            }
 //        });
 
+        //TODO - changed for periodic volcation spinner msgs
+        throwing.setLocation(location);
+
     }
+
+
+
+
+
+
+
+    public float getLoc(){
+        return location;
+    }
+
+    public void setLoc(float loc){
+        location = loc;
+    }
+
+    public float getVol(){
+        return vol;
+    }
+
+    public void setVol(float vol){
+        this.vol = vol;
+    }
+
+
+
+
+
 
     @Override
     public void onResume(){

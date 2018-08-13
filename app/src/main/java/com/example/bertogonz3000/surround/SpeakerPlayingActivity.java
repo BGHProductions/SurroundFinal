@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class SpeakerPlayingActivity extends AppCompatActivity {
+public class  SpeakerPlayingActivity extends AppCompatActivity {
 
     int centerID, frontRightID, frontLeftID, backRightID, backLeftID, controllerNumber, numControllers, phoneVol;;
     boolean isPlaying0, isPlaying1, throwing, loaded, reconnected, prepared0, prepared1, joining;
