@@ -176,7 +176,7 @@ public class SongSelectionActivity extends AppCompatActivity {
         rainList.add(R.raw.rain);
         rainList.add(R.raw.rain);
 
-        Track rainTrack = new Track("Rain", "Audio Enabled", rainList);
+        Track rainTrack = new Track("Rain Shower", "Audio Enabled", rainList);
         rainTrack.setDrawable(R.drawable.rain);
         tracklist.add(rainTrack);
 
@@ -190,7 +190,7 @@ public class SongSelectionActivity extends AppCompatActivity {
         thunderList.add(R.raw.thunder);
         thunderList.add(R.raw.thunder);
 
-        Track thunderTrack = new Track("Thunder", "SFX", thunderList);
+        Track thunderTrack = new Track("Thunderstorm", "Sound FX", thunderList);
         thunderTrack.setDrawable(R.drawable.storm);
         tracklist.add(thunderTrack);
 
