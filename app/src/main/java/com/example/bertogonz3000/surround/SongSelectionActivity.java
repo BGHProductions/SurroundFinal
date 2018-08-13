@@ -9,6 +9,7 @@ import android.view.MenuItem;
 
 import com.example.bertogonz3000.surround.Models.Track;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class SongSelectionActivity extends AppCompatActivity {
@@ -148,6 +149,34 @@ public class SongSelectionActivity extends AppCompatActivity {
         tracklist.add(houseTrack);
 
         adapter.notifyItemInserted(3);
+
+        ArrayList<Integer> guitarList = new ArrayList<Integer>();
+
+        guitarList.add(R.raw.guitar);
+        guitarList.add(R.raw.guitar);
+        guitarList.add(R.raw.guitar);
+        guitarList.add(R.raw.guitar);
+        guitarList.add(R.raw.guitar);
+
+        Track guitarTrack = new Track("Guitar Riff", "Travis Tops", guitarList);
+
+        tracklist.add(guitarTrack);
+
+        adapter.notifyItemInserted(4);
+
+        ArrayList<Integer> drumList = new ArrayList<Integer>();
+
+        drumList.add(R.raw.drums);
+        drumList.add(R.raw.drums);
+        drumList.add(R.raw.drums);
+        drumList.add(R.raw.drums);
+        drumList.add(R.raw.drums);
+
+        Track drumTrack = new Track("Drum beat", "LumBeat", drumList);
+
+        tracklist.add(drumTrack);
+
+        adapter.notifyItemInserted(5);
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
