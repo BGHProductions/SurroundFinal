@@ -34,9 +34,20 @@
         android:layout_below="@id/tvSongSelection"
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@id/btnRefresh">
 
     </android.support.v7.widget.RecyclerView>
 
+    <Button
+        android:id="@+id/btnRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="REFRESH"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/halfWhite"
+        android:textStyle="bold" />
 
 </RelativeLayout>
