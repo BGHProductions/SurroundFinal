@@ -111,9 +111,9 @@ public class SongSelectionActivity extends AppCompatActivity {
         ArrayList<Integer> starwarsList = new ArrayList<Integer>();
 
         starwarsList.add(R.raw.starwarsfull);
-        starwarsList.add(R.raw.stawarsleft);
+        starwarsList.add(R.raw.starwarsleft);
         starwarsList.add(R.raw.starwarsright);
-        starwarsList.add(R.raw.stawarsleft);
+        starwarsList.add(R.raw.starwarsleft);
         starwarsList.add(R.raw.starwarsright);
 
         Track starwarsTrack = new Track("Star Wars: The Force Awakens", "Lucasfilm", starwarsList);
@@ -139,40 +139,62 @@ public class SongSelectionActivity extends AppCompatActivity {
 
         adapter.notifyItemInserted(3);
 
-        ArrayList<Integer> guitarList = new ArrayList<Integer>();
+//        ArrayList<Integer> guitarList = new ArrayList<Integer>();
+//
+//        guitarList.add(R.raw.guitar);
+//        guitarList.add(R.raw.guitar);
+//        guitarList.add(R.raw.guitar);
+//        guitarList.add(R.raw.guitar);
+//        guitarList.add(R.raw.guitar);
+//
+//        Track guitarTrack = new Track("Guitar Riff", "Travis Tops", guitarList);
+//        guitarTrack.setDrawable(R.drawable.guitar);
+//
+//        tracklist.add(guitarTrack);
+//
+//        adapter.notifyItemInserted(4);
+//
+//        ArrayList<Integer> drumList = new ArrayList<Integer>();
+//
+//        drumList.add(R.raw.drums);
+//        drumList.add(R.raw.drums);
+//        drumList.add(R.raw.drums);
+//        drumList.add(R.raw.drums);
+//        drumList.add(R.raw.drums);
+//
+//        Track drumTrack = new Track("Drum Beat", "LumBeat", drumList);
+//        drumTrack.setDrawable(R.drawable.drums);
+//        tracklist.add(drumTrack);
+//
+//        adapter.notifyItemInserted(5);
 
-        guitarList.add(R.raw.guitar);
-        guitarList.add(R.raw.guitar);
-        guitarList.add(R.raw.guitar);
-        guitarList.add(R.raw.guitar);
-        guitarList.add(R.raw.guitar);
+        ArrayList<Integer> rainList = new ArrayList<>();
 
-        Track guitarTrack = new Track("Guitar Riff", "Travis Tops", guitarList);
-        guitarTrack.setDrawable(R.drawable.guitar);
+        rainList.add(R.raw.rain);
+        rainList.add(R.raw.rain);
+        rainList.add(R.raw.rain);
+        rainList.add(R.raw.rain);
+        rainList.add(R.raw.rain);
 
-        tracklist.add(guitarTrack);
+        Track rainTrack = new Track("Rain", "Audio Enabled", rainList);
+
+        tracklist.add(rainTrack);
 
         adapter.notifyItemInserted(4);
 
-        ArrayList<Integer> drumList = new ArrayList<Integer>();
+        ArrayList<Integer> thunderList = new ArrayList<>();
 
-        drumList.add(R.raw.drums);
-        drumList.add(R.raw.drums);
-        drumList.add(R.raw.drums);
-        drumList.add(R.raw.drums);
-        drumList.add(R.raw.drums);
+        thunderList.add(R.raw.thunder);
+        thunderList.add(R.raw.thunder);
+        thunderList.add(R.raw.thunder);
+        thunderList.add(R.raw.thunder);
+        thunderList.add(R.raw.thunder);
 
-        Track drumTrack = new Track("Drum Beat", "LumBeat", drumList);
-        drumTrack.setDrawable(R.drawable.drums);
-        tracklist.add(drumTrack);
+        Track thunderTrack = new Track("Thunder", "SFX", thunderList);
+
+        tracklist.add(thunderTrack);
 
         adapter.notifyItemInserted(5);
-
-        //fake tracks below
-        Track drakeTrack = new Track("In My Feelings", "Drake", drumList);
-        drakeTrack.setDrawable(R.drawable.drake);
-        tracklist.add(drakeTrack);
-        adapter.notifyItemInserted(6);
 
         ArrayList<Integer> heliList = new ArrayList<Integer>();
 
@@ -186,7 +208,14 @@ public class SongSelectionActivity extends AppCompatActivity {
         heliTrack.setDrawable(R.drawable.helicopter);
 
         tracklist.add(heliTrack);
+        adapter.notifyItemInserted(6);
+
+        Track drakeTrack = new Track("In My Feelings", "Drake", heliList);
+        drakeTrack.setDrawable(R.drawable.drake);
+        tracklist.add(drakeTrack);
         adapter.notifyItemInserted(7);
+
+
 
     }
     @Override
