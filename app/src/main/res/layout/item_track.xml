@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="10dp"
         android:layout_alignTop="@id/ivCover"
+        android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/ivCover"
         android:fontFamily="@font/roboto_light"
         android:text="Track name"
@@ -36,15 +36,15 @@
         android:id="@+id/tvArtist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/ivCover"
+        android:layout_alignBottom="@id/ivCover"
         android:layout_alignStart="@id/tvTrackName"
         android:layout_below="@id/tvTrackName"
         android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/ivCover"
         android:fontFamily="@font/roboto_light"
         android:text="artist"
         android:textAllCaps="false"
         android:textColor="#bfffffff"
-        android:layout_alignBottom="@id/ivCover"
         android:textSize="15sp" />
 
 </RelativeLayout>
