@@ -9,7 +9,6 @@ import android.view.MenuItem;
 
 import com.example.bertogonz3000.surround.Models.Track;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class SongSelectionActivity extends AppCompatActivity {
@@ -159,6 +158,7 @@ public class SongSelectionActivity extends AppCompatActivity {
         guitarList.add(R.raw.guitar);
 
         Track guitarTrack = new Track("Guitar Riff", "Travis Tops", guitarList);
+        guitarTrack.setDrawable(R.drawable.guitar);
 
         tracklist.add(guitarTrack);
 
@@ -172,11 +172,23 @@ public class SongSelectionActivity extends AppCompatActivity {
         drumList.add(R.raw.drums);
         drumList.add(R.raw.drums);
 
-        Track drumTrack = new Track("Drum beat", "LumBeat", drumList);
-
+        Track drumTrack = new Track("Drum Beat", "LumBeat", drumList);
+        drumTrack.setDrawable(R.drawable.drums);
         tracklist.add(drumTrack);
 
         adapter.notifyItemInserted(5);
+
+        //fake tracks below
+        Track drakeTrack = new Track("In My Feelings", "Drake", drumList);
+        drakeTrack.setDrawable(R.drawable.drake);
+        tracklist.add(drakeTrack);
+        adapter.notifyItemInserted(6);
+
+        Track markTrack = new Track("The Facebook Song", "Mark Zuckerberg", drumList);
+        markTrack.setDrawable(R.drawable.zuck);
+        tracklist.add(markTrack);
+        adapter.notifyItemInserted(7);
+
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
