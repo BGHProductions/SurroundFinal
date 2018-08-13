@@ -674,8 +674,13 @@ public class  SpeakerPlayingActivity extends AppCompatActivity {
     public void disconnect(View view) {
         parseLiveQueryClient.disconnect();  //only if user initiated the disconnect from the server
         disconnect();
-        pauseMPs(0);
-        pauseMPs(1);
+
+        if(allMPs != null) {
+            pauseMPs(0);
+            if (controllerNumber > 1) {
+                pauseMPs(1);
+            }
+        }
         reconnected = false;
         userInitiatedDisconnect = true;
     }
