@@ -455,7 +455,7 @@ public class ControllerPlayingActivity extends AppCompatActivity implements Seek
         super.onResume();
         //start the global clock timer when the activity appears on the screen
         //start the song
-        timerHandler.postDelayed(runnableCode, 1000);
+        timerHandler.postDelayed(runnableCode, 2000);
         if(mp != null) {
             mp.start();
         }
@@ -474,7 +474,7 @@ public class ControllerPlayingActivity extends AppCompatActivity implements Seek
                 //old server
 //                song.setTime(mp.getCurrentPosition());
 //                song.saveInBackground();
-                timerHandler.postDelayed(runnableCode, 1000); // repeat same runnable every second
+                timerHandler.postDelayed(runnableCode, 2000); // repeat same runnable every second
             }
         }
     };

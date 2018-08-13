@@ -255,18 +255,18 @@ public class  SpeakerPlayingActivity extends AppCompatActivity {
 
                     if (object.getControllerNumber() == 0) {
                         // if first controller starting session
-                        if (allMPs.get(0).getCurrentPosition() > object.getTime() + 200) {
+                        if (allMPs.get(0).getCurrentPosition() > object.getTime() + 100) {
                             Log.d("SpeakerPlayingActivity", "times are off so calling changeTime");
                             changeTime(object.getTime(), 0);
-                        } else if (allMPs.get(0).getCurrentPosition() < object.getTime() - 200) {
+                        } else if (allMPs.get(0).getCurrentPosition() < object.getTime() - 100) {
                             changeTime(object.getTime() + 100, 0);
                         }
                     } else {
                         // if first controller starting session
-                        if (allMPs.get(1).getCurrentPosition() > object.getTime() + 200) {
+                        if (allMPs.get(1).getCurrentPosition() > object.getTime() + 100) {
                             Log.d("SpeakerPlayingActivity", "times are off so calling changeTime");
                             changeTime(object.getTime(), 1);
-                        } else if (allMPs.get(5).getCurrentPosition() < object.getTime() - 200) {
+                        } else if (allMPs.get(5).getCurrentPosition() < object.getTime() - 100) {
                             changeTime(object.getTime() + 100, 1);
                         }
 
@@ -508,18 +508,18 @@ public class  SpeakerPlayingActivity extends AppCompatActivity {
 
                 if (object.getControllerNumber() == 0) {
                     // if first controller starting session
-                    if (!allMPs.isEmpty() && allMPs.get(0).getCurrentPosition() > object.getTime() + 200) {
+                    if (!allMPs.isEmpty() && allMPs.get(0).getCurrentPosition() > object.getTime() + 100) {
                         Log.d("SpeakerPlayingActivity", "times are off so calling changeTime");
                         changeTime(object.getTime(), 0);
-                    } else if (!allMPs.isEmpty() && allMPs.get(0).getCurrentPosition() < object.getTime() - 200) {
+                    } else if (!allMPs.isEmpty() && allMPs.get(0).getCurrentPosition() < object.getTime() - 100) {
                         changeTime(object.getTime() + 100, 0);
                     }
                 } else {
                     // if first controller starting session
-                    if (allMPs.get(1).getCurrentPosition() > object.getTime() + 200) {
+                    if (allMPs.get(1).getCurrentPosition() > object.getTime() + 100) {
                         Log.d("SpeakerPlayingActivity", "times are off so calling changeTime");
                         changeTime(object.getTime(), 1);
-                    } else if (allMPs.get(5).getCurrentPosition() < object.getTime() - 200) {
+                    } else if (allMPs.get(5).getCurrentPosition() < object.getTime() - 100) {
                         changeTime(object.getTime() + 100, 1);
                     }
 
@@ -579,12 +579,14 @@ public class  SpeakerPlayingActivity extends AppCompatActivity {
                     } else {
                         Log.e("THROWING", "Returned");
                         if (object.getControllerNumber() == 0) {
-                            for (int i = 0; i < 5; i++) {
+                            allMPs.get(0).setVolume(0, 0);
+                            for (int i = 1; i < 5; i++) {
                                 setToMaxVol(allMPs.get(i), i);
                             }
                         }
                         else if (object.getControllerNumber() == 1) {
-                            for (int i = 5; i < 10; i++) {
+                            allMPs.get(5).setVolume(0, 0);
+                            for (int i = 6; i < 10; i++) {
                                 setToMaxVol(allMPs.get(i), i - 5);
                             }
                         }
@@ -742,7 +744,8 @@ public class  SpeakerPlayingActivity extends AppCompatActivity {
         allMPs.add(backRightMP);
         Log.d("SpeakerPlayingActivity", "finished setting up media players");
 
-        setToMaxVol(centerMP, 0);
+        //TODO - oiasjdf;lskajfdlk;ajsdl;kfj;ansdfoiansdiof;lkaosidlfnkaoidsfljknodislkjngoasidljfknmaosdlfikjmasdoilfkjasdmoiflkj
+        centerMP.setVolume(0,0);
         setToMaxVol(frontRightMP, 1);
         setToMaxVol(backRightMP, 2);
         setToMaxVol(backLeftMP, 3);
@@ -844,7 +847,7 @@ public class  SpeakerPlayingActivity extends AppCompatActivity {
 //        Log.e("MATH", "left = " + left);
         float expTop = (float) -(Math.pow((position - node), 2));
         //TODO - CHANGED 12:49 7/26
-        double exponent = expTop/0.02;
+        double exponent = expTop/0.01;
         //TODO - add LEFT* before Math.pow....if this doesn't work..got rid of cuz it was ~1
         float maxVol = (float) Math.pow(Math.E, exponent);
         Log.e("MATH", "maxVol at " + node + " = " + maxVol);
