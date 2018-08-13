@@ -103,19 +103,9 @@ public class SongSelectionActivity extends AppCompatActivity {
 //
 //        adapter.notifyItemInserted(2);
 
-        ArrayList<Integer> heliList = new ArrayList<Integer>();
-
-        heliList.add(R.raw.helicopter);
-        heliList.add(R.raw.helicopter);
-        heliList.add(R.raw.helicopter);
-        heliList.add(R.raw.helicopter);
-        heliList.add(R.raw.helicopter);
-
-        Track heliTrack = new Track("Helicopter", "Single Sound", heliList);
-        heliTrack.setDrawable(R.drawable.helicopter);
-
-        tracklist.add(heliTrack);
-
+        Track markTrack = new Track("The Facebook Song", "Mark Zuckerberg", yesterdayList);
+        markTrack.setDrawable(R.drawable.zuck);
+        tracklist.add(markTrack);
         adapter.notifyItemInserted(1);
 
         ArrayList<Integer> starwarsList = new ArrayList<Integer>();
@@ -184,9 +174,18 @@ public class SongSelectionActivity extends AppCompatActivity {
         tracklist.add(drakeTrack);
         adapter.notifyItemInserted(6);
 
-        Track markTrack = new Track("The Facebook Song", "Mark Zuckerberg", drumList);
-        markTrack.setDrawable(R.drawable.zuck);
-        tracklist.add(markTrack);
+        ArrayList<Integer> heliList = new ArrayList<Integer>();
+
+        heliList.add(R.raw.helicopter);
+        heliList.add(R.raw.helicopter);
+        heliList.add(R.raw.helicopter);
+        heliList.add(R.raw.helicopter);
+        heliList.add(R.raw.helicopter);
+
+        Track heliTrack = new Track("Helicopter", "Single Sound", heliList);
+        heliTrack.setDrawable(R.drawable.helicopter);
+
+        tracklist.add(heliTrack);
         adapter.notifyItemInserted(7);
 
     }
