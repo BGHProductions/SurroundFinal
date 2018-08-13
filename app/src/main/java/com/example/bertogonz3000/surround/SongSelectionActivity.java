@@ -177,7 +177,7 @@ public class SongSelectionActivity extends AppCompatActivity {
         rainList.add(R.raw.rain);
 
         Track rainTrack = new Track("Rain", "Audio Enabled", rainList);
-
+        rainTrack.setDrawable(R.drawable.rain);
         tracklist.add(rainTrack);
 
         adapter.notifyItemInserted(4);
@@ -191,7 +191,7 @@ public class SongSelectionActivity extends AppCompatActivity {
         thunderList.add(R.raw.thunder);
 
         Track thunderTrack = new Track("Thunder", "SFX", thunderList);
-
+        thunderTrack.setDrawable(R.drawable.storm);
         tracklist.add(thunderTrack);
 
         adapter.notifyItemInserted(5);
