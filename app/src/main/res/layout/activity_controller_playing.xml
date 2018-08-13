@@ -108,7 +108,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginStart="10dp"
         android:background="@drawable/filled_button"
-        android:fontFamily="@font/roboto_light"
+        android:fontFamily="@font/roboto"
         android:onClick="checkConnection"
         android:text="Throw Sound"
         android:textAllCaps="false"
@@ -147,12 +147,11 @@
 
     <ImageButton
         android:id="@+id/replayButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/seekBar"
-        android:layout_marginRight="10dp"
-        android:layout_below="@id/tvStart"
-        android:layout_marginTop="3dp"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/tvStart"
+        android:layout_toEndOf="@+id/fastforward"
+        android:layout_marginLeft="10dp"
         android:background="@android:color/transparent"
         android:onClick="replay"
         circular:srcCompat="@drawable/ic_replay_40" />
@@ -171,20 +170,22 @@
 
     <ImageView
         android:id="@+id/ivDisconnected"
-        android:layout_width="40dp"
-        android:layout_height="34dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:foregroundGravity="right"
-        android:visibility="invisible" />
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/tvStart"
+        android:layout_toStartOf="@id/rewind"
+        android:visibility="invisible"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/wifidisconnect2"/>
 
     <ImageView
         android:id="@+id/ivConnected"
-        android:layout_width="40dp"
-        android:layout_height="34dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:foregroundGravity="right" />
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/tvStart"
+        android:layout_marginRight="10dp"
+        android:layout_toStartOf="@id/rewind"
+        android:src="@drawable/wificonnected2" />
 
     <ImageView
         android:id="@+id/rewind"
